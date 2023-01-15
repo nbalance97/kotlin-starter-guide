@@ -21,7 +21,6 @@ public class Lec02Main {
     return str.startsWith("A");
   }
 
-
   public boolean startsWithA3(String str) {
     if (str == null) {
       return false;
