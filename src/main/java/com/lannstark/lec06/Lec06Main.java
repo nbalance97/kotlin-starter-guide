@@ -3,7 +3,6 @@ package com.lannstark.lec06;
 public class Lec06Main {
 
   public static void main(String[] args) {
-
     for (int i = 1; i <= 5; i += 2) {
       System.out.println(i);
     }
@@ -13,7 +12,5 @@ public class Lec06Main {
       System.out.println(i);
       i++;
     }
-
   }
-
 }

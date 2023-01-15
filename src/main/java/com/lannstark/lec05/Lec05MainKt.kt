@@ -32,6 +32,7 @@ package com.lannstark.lec05
         }
         - 조건부에는 어떠한 Expression이라도 들어갈 수 있습니다(is도 가능)
         - 값이 없을 수도 있습니다.(when을 값 없이 early return처럼 사용)
+        - when절 또한 Expression입니다.
 
         when절은 switch보다는 훨씬 유연하며 강력한 기능을 갖습니다.
         when은 Enum Class와 Sealed Class와 함께 사용할 경우 더욱더 진가를 발휘합니다.
