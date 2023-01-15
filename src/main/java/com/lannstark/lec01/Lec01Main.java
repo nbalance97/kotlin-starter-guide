@@ -12,5 +12,4 @@ public class Lec01Main {
     Long number3 = 1_000L; // (3)
     Person person = new Person("최태현"); // (4)
   }
-
 }
