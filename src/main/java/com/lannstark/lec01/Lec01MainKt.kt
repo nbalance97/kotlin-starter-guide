@@ -32,10 +32,17 @@ package com.lannstark.lec01
     프로그래머가 boxing-unboxing 고려하지 않아도 되도록 코틀린이 알아서 처리
     자바의 boxing의 차이는 null 유무도 존재한다.
  */
+
 fun main() {
     var number1: Long = 10L
     val number2: Long = 10L
     var number3: Long? = 1_000L // null이 들어갈 수 있다면 타입?으로 타입 지정
+    val nums = 10L // 컴파일러가 자동으로 타입 추론해 줍니다.
+
+    // 오른쪽에 일반적인 값이나 생성자가 들어가면 컴파일러가 hint로 타입 추론해주지는 않는 듯
+    // 함수를 사용한 경우엔 타입 추론을 해주는 것 같음.
+
+    val list = listOf(1, 2, 3)
 
     var person = Person("병훈") // 자바에서는 new 키워드를 사용하지만 코틀린은 new를 붙이지 않는다.
 }

@@ -33,27 +33,44 @@ package com.lannstark.lec02
  */
 
 fun main() {
-    var person = Person("abc")
-    startsWithA5(person.name)
+    // ver1. normal
+    val st1 = startsWithA("abc")
+    println(st1)
+
 }
 
-fun startsWithA5(str: String): Boolean {
+fun startsWithA(str: String): Boolean {
+    // 일반적인 메소드
     return str.startsWith("A")
 }
 
 fun startsWithA1(str: String?): Boolean {
+    // ?.(Safe Call) 연산자같은 경우 왼쪽이 null이라면 null 리턴
+    // ?:(Elvis) 연산자같은 경우 왼쪽이 null이라면 우측 값 리턴, null이 아니라면 왼쪽 값(str?~) 리턴
+
     return str?.startsWith("A")
         ?: throw IllegalArgumentException("null")
 }
 
 fun startsWithA2(str: String?): Boolean? {
+    // ?.(Safe Call) 연산자로 인해 str이 null이라면 null이 리턴되며
+    // null이 아니라면 startsWith 메소드를 호출합니다.
+
     return str?.startsWith("A")
 }
 
 fun startsWithA3(str: String?): Boolean {
+    // ?.(Safe Call) 연산자로 인해 str이 null이라면 null이 리턴되며, 아니라면 메소드를 호출합니다.
+    // ?:(Elvis) 연산자로 인해 좌측의 함수 실행 결과가 null이라면 false가 리턴되며
+    // , 아니라면 좌측의 함수 실행 결과가 리턴됩니다.
+
     return str?.startsWith("A") ?: false
 }
 
 fun startsWithA4(str: String?): Int {
+    // !!. : not-null assertion(널 아님 단언문)
+    // str이 무조건 null이 아니라는 가정 하에 length 실행
+    // null이라면 NPE 발생
+
     return str!!.length
 }

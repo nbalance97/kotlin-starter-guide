@@ -16,6 +16,5 @@ public class JavaPerson {
     this.name = name;
     this.age = age;
   }
-
 }
 

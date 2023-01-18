@@ -1,5 +1,6 @@
 package com.lannstark.lec13;
 
+
 public class JavaHouse {
 
   private String address;
@@ -25,5 +26,4 @@ public class JavaHouse {
       return JavaHouse.this.address;
     }
   }
-
 }

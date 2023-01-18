@@ -68,27 +68,40 @@ package com.lannstark.lec03
  */
 fun main() {
 
-    val person = Person("abcde", 15)
+}
 
-    printAgeIfPersonNullable(null)
-    printAgeIfPersonV1(person)
-    printAgeIfPersonV2(person)
+fun withNormalType() {
+    val a: Int = 10
+    // val b: Long = a // 에러 발생
+    val b: Long = a.toLong()
+    val c: Long? = null // Long? 타입에는 null이 들어갈 수 있으므로 safe-call이나 elvis 필요
+    val data = c ?: 5
 }
 
 fun printAgeIfPersonV1(obj: Any) {
-    
     if (obj is Person) {
-        var person = obj as Person
+        var person = obj as Person // as Type으로 사용 가능
+        println(obj.age)
+    }
+}
+
+fun printAgeIfPersonV15(obj: Any) {
+    if (obj is Person) {
+        // 위 조건문을 통과한다면 obj가 스마트 캐스팅 되어 Person처럼 사용 가능합니다.
+        // https://kotlinlang.org/docs/typecasts.html#smart-casts
+
         println(obj.age)
     }
 }
 
 fun printAgeIfPersonV2(obj: Any) = when(obj) {
+    // 마찬가지로 when절에서도 스마트캐스팅 된다. (앞에서 is로 검사)
     is Person -> println(obj.age)
     else -> {}
 }
 
 fun printAgeIfPersonNullable(obj: Any?) {
+    // val person1 = obj as Person // obj가 null인 경우 NPE가 발생합니다.
     val person = obj as? Person // obj가 null이 될수 있는 경우 as?
 
     // as?를 사용해 준다면 obj가 null인 경우 person도 null이 된다.
