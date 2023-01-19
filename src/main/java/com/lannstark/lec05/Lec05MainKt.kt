@@ -20,6 +20,14 @@ package com.lannstark.lec05
         - 따라서 if-else문을 리턴할 수도 있습니다.
         - 코틀린은 if-else문을 expression으로 사용하므로 삼항 연산자가 존재하지 않습니다.
 
+        if-else가 expression이므로 if-else문을 리턴할 수도 있습니다.
+
+        return if (조건) {
+            ...
+        } else {
+            ...
+        }
+
         팁)
         - 어떤 값이 특정 범위에 포함되어 있는지, 포함되어 있지 않은지
         - if (0 <= score && score <= 100)이랑 if (score in 0..100)은 같습니다.
@@ -36,6 +44,8 @@ package com.lannstark.lec05
 
         when절은 switch보다는 훨씬 유연하며 강력한 기능을 갖습니다.
         when은 Enum Class와 Sealed Class와 함께 사용할 경우 더욱더 진가를 발휘합니다.
+        * Sealed Class -> 자식 클래스의 종류를 제한함으로써 컴파일 시점에 Sealed Class의 하위 클래스에 어떤것이 있는지 컴파일러가 알 수 있음.
+                       -> 따라서 when절 + is 클래스타입으로 에러 없이 분기처리할 수 있다.
  */
 
 fun startsWithA(obj: Any): Boolean {

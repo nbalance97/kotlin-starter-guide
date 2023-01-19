@@ -27,6 +27,10 @@ package com.lannstark.lec06
     4. while문
         - 자바와 똑같습니다.
         - val 대신에 var을 사용하면 됩니다.
+
+     * 중위함수(infix) 예시
+     구현 -> infix fun Int.mul(other: Int) = this * other
+     사용 -> 1 mul 5 = 5
  */
 
 fun main() {
